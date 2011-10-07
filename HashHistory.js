@@ -1,4 +1,4 @@
-/** @preserve Version 0.2.1 
+/** @preserve Version 0.2.2
 
 Copyright (C) 2011 by Christian Vaagland Tellnes
 
@@ -270,8 +270,8 @@ THE SOFTWARE.
 		var h = splitHash(page);
 		
 		if (hash === true) {
-			hash = hash.toString();
-		} else {
+			hash = currentHash;
+		} else if(!hash) {
 			hash = '';
 		}
 		
