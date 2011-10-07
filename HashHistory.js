@@ -287,10 +287,10 @@ THE SOFTWARE.
 	
 	
 	/**
+	 *  @param {boolean|string} type
 	 *  @param {function(string=)} handle
-	 *  @param {boolean|string=} type (optional)
 	**/
-	function addListener(handle, type) {
+	function addListener(type, handle) {
 		if (type === true) { 
 			type = listenerType.CHANGE;
 		} else if (type) {
@@ -482,7 +482,7 @@ THE SOFTWARE.
 			}
 			break;
 		case '[object Function]':
-			addListener(arg, opt_var);
+			addListener(opt_var, arg);
 			break;
 		case '[object Object]':
 			setOptions(arg);
@@ -502,6 +502,7 @@ THE SOFTWARE.
 	HashHistory["init"] = init;
 	HashHistory['hash'] = hash;
 	HashHistory['getCurrent'] = getCurrent;
+	HashHistory['on'] = addListener;
 	HashHistory["_iframeLoaded"] = iframeLoaded;
 	HashHistory["_startInterval"] = startInterval;
 	
