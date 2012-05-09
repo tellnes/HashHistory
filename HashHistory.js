@@ -509,4 +509,8 @@ THE SOFTWARE.
 	
 	win['HashHistory'] = HashHistory;
 
-}(this));
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = HashHistory;
+	}
+
+}(window));
